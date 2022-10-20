@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+	G00398810     
+    </ion-title>
+	<ion-buttons end>
+        <button (click)="openSettings()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-list>
+	<ion-item *ngFor="let c of cityInfo">
+		<h2>News & weather for {{ c.capital }}, {{ c.name.common }} .</h2>		
+		<ion-img src="{{ c.flags.png }}"></ion-img>
+	</ion-item>
+</ion-list>
+ <br/>
+
+<ion-list>
+	<ion-item *ngFor="let w of weatherInfo">	
+		<p>Temperature:{{ w.temp }}</p>		
+		<p>Weather:{{ w.weather.description }}</p>		
+		<ion-img width= "100" height= "100" src="https://www.weatherbit.io/static/img/icons/{{ w.weather.icon }}.png"></ion-img>
+		<p>Wind from:{{ w.wind_cdir_full }}</p>
+	</ion-item>
+</ion-list>
+
+  
+  <br/>
+  <button ion-button (click)= "openNews()">NEWS</button>
+</ion-content>

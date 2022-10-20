@@ -1,0 +1,34 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<h2>Selected City: {{ myCity }}</h2>
+<input type="text" class="form-control" [(ngModel)]="chosenCity" placeholder="Enter City Name">
+<br/>
+<h2>Units</h2>
+<ion-list radio-group [(ngModel)]= "chosenUnits">    
+
+    <ion-item>
+      <ion-label>Scientific</ion-label>
+      <ion-radio value="S"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Metric</ion-label>
+      <ion-radio value="M"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Fahrenheit</ion-label>
+      <ion-radio value="I"></ion-radio>
+    </ion-item>
+    
+</ion-list>
+
+<br/>
+  <button ion-button (click)= "saveSettings()" [disabled]= "!chosenCity">SAVE</button>
+</ion-content>

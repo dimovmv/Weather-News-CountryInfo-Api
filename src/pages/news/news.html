@@ -1,0 +1,19 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>News</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<h2>News from {{ cca2 }}.</h2>
+
+<ion-list>
+	<ion-card *ngFor="let cn of countryNews">		
+		<img src="{{ cn.urlToImage }}">
+		<p>{{ cn.title }}</p>
+		<p>{{ cn.description }}</p> 
+		<p>{{ cn.url }}</p>	
+	</ion-card>
+</ion-list>
+</ion-content>
